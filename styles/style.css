@@ -1,0 +1,93 @@
+             body 
+     { background-color: rgb(39, 155, 97);
+       color: white; }
+
+       .app-container {
+    max-width: 350px;  
+    margin: 0 auto; 
+}
+
+       .vy {display: flex;
+      flex-direction: column;}
+
+
+.kundvagn-header {
+    display: flex;
+    justify-content: flex-end; 
+    max-width: 100%;
+    padding: 1em;
+}
+
+
+.kundvagn-container {
+  position: relative;
+  display: inline-block;
+}
+
+.kund-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 0.8em;
+  padding: 2px 6px;
+  border-radius: 50%;
+  display: none;
+}
+
+           .kundvagn 
+           
+     { 
+      width: 40px;
+       height: 40px;
+       border-radius: 0.5em;
+      margin-left: auto; }
+
+
+           .kundvagn:hover 
+     { cursor: pointer; }
+
+    
+
+
+
+           .menu-items 
+     { background-color: rgb(104, 100, 100);
+       width: 20em;
+       border: 0.1em solid white;
+       padding: 0.5em 0.5em 0.5em 0.5em; }
+
+
+           .menu-items:hover 
+     { cursor: pointer;}
+
+
+           .menu-items.selected 
+     { background-color: rgb(50, 50, 50); }
+
+
+           .dip 
+     { display: grid;
+       grid-template-columns: repeat(3, 1fr);
+       gap: 0.5em; }
+
+
+           .dips 
+     { margin-top: 1em; }
+
+
+           .valgrejer 
+     { background-color: grey;
+       border: 0.1em solid black;
+       border-radius: 0.2em;
+       text-align: center; }
+
+
+          .valgrejer.selected 
+     { background-color: rgb(50, 50, 50); }
+
+
+
+         .hidden 
+     { display:none }
