@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Yum yum gim me sum!</title>
     <link rel="stylesheet" href="styles/style.css">
-    <script src="js/menu.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
 </head>
 <body>
 
@@ -18,62 +18,50 @@
         </div>
     </header>
 
-    <section id="menyVy" class="vy">
-        <h1 id="meny">MENY</h1>
+<section id="menyVy" class="vy">
 
- <div class=menu-items>
-    <h3 class="menu-items-name">KARLSTAD............9 SEK</h3>
-    <p id="menu-beskrivning">Kantarell, scharlottenlök, morot, bladpersilja</p>
- </div>
+    <h1 class="menytitel">Meny</h1>
 
- <div class="menu-items">
-    <h3 class="menu-items-name">BANGKOK............9 SEK</h3>
-    <p id="menu-beskrivning">morot, salladslök, chili, kokos, lime, koriander</p>
- </div>
+    <div class="wonton-container menu-section">
+    </div>
 
- <div class="menu-items">
-    <h3 class="menu-items-name">HO CHI MINH............9 SEK</h3>
-    <p id="menu-beskrivning">kål, salladslök, chili, vitlök, ingefära, tofu</p>
- </div>
+    <h2 id="dip-title" class="kategori-titel">Dipsås</h2>
+    <div class="dip-container menu-section">
+    </div>
 
- <div class="menu-items">
-    <h3 class="menu-items-name">PARIS............9 SEK</h3>
-    <p id="menu-beskrivning">kål, chevre, honung, basilika, valnötspasta</p>
- </div>
+    <h2 id="drink-title" class="kategori-titel">Dryck</h2>
+    <div class="drink-container menu-section">
+    </div>
 
- <div class="menu-items">
-    <h3 class="menu-items-name">OAXACA............9 SEK</h3>
-    <p id="menu-beskrivning">majs, tomat, rostade ärtor, vitlök, lime</p>
- </div>
-
- <div class="menu-items dips">
-  <h3 class="menu-items-name">DIPSÅS............19 SEK</h3>
-  <div class="dip">
-    <div class="valgrejer">Sweet chili</div>
-    <div class="valgrejer">wonton std</div>
-    <div class="valgrejer">sweet & sour</div>
-    <div class="valgrejer">Hot mango</div>
-    <div class="valgrejer">chili mayo</div>
-    <div class="valgrejer">guacamole</div>
-  </div>
-</div>
-
- <div class="menu-items dips">
-  <h3 class="menu-items-name">DRICKA............19 SEK</h3>
-  <div class="dip">
-    <div class="valgrejer">Fanta Orange</div>
-    <div class="valgrejer">Fanta Exotic</div>
-    <div class="valgrejer">Coca-Cola</div>
-    <div class="valgrejer">Sprite</div>
-    <div class="valgrejer">LOKA Granatäpple</div>
-    <div class="valgrejer">LOKA citrus</div>
-  </div>
-</div>
 </section>
 
 <section id="cartVy" class="vy hidden">
-    <h1>kundvagn</h1>
-    <div id="cartItems"></div>
+
+    <div class="cart-items"></div>
+
+    <div class="cart-total">
+        <span>TOTALT<br><small>inkl 20% moms</small></span>
+        <strong><span id="cart-total-price">0</span> SEK</strong>
+    </div>
+
+    <button class="checkout-btn">TAKE MY MONEY!</button>
+
+</section>
+
+
+<section id="orderVy" class="vy hidden">
+
+    <div class="order-content">
+        <img src="img/yygs.png" alt="Food box" class="order-image">
+
+        <h1>DINA WONTONS</h1>
+        <h1>TILLAGAS!</h1>
+        <p class="order-time">ETA 5 MIN</p>
+        <p class="order-id">#4kjwsdf2</p>
+
+        <button class="secondary-btn">SE KVITTO</button>
+        <button id="newOrderBtn" class="primary-btn">GÖR EN NY BESTÄLLNING</button>
+    </div>
 
 </section>
 

@@ -4,4 +4,3 @@ export function showView(id) {
 
     document.getElementById(id).classList.remove("hidden");
 }
-
