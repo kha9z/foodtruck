@@ -2,22 +2,22 @@ import { showView } from "./vyer.js";
 import { getApiKey, createTenant, fetchMenu } from "./api.js";
 import { renderCartView } from "./cartVy.js";
 import { toggleCartItem, getCartItems, clearCart } from "./cartFunctions.js";
-
+import { renderReceiptView } from "./kvittoVy.js";
 
 let apiKey = "";
 let tenant = null;
 let menuItems = [];
 
+// starta program, hämta API nyckel, skapa tenant, hämta menu
 init();
-
 
 async function init() {
     apiKey = await getApiKey();
 
- tenant = await createTenant(apiKey, getTenantName());
- function getTenantName() {
-    return "Arnor"; 
-}
+    tenant = await createTenant(apiKey, getTenantName());
+    function getTenantName() {
+        return "Arnor";
+    }
 
     menuItems = await fetchMenu(apiKey);
     console.log("Menu from API:", menuItems);
@@ -29,6 +29,7 @@ async function init() {
 function renderMenu(menu) {
     const menyVy = document.getElementById("menyVy");
 
+// välja vart olika saker ska hamna
     const containers = {
         wonton: menyVy.querySelector(".wonton-container"),
         dip: menyVy.querySelector(".dip-container"),
@@ -62,10 +63,12 @@ function renderMenu(menu) {
         });
 }
 
+
 function addMenuClickEvents() {
     document.querySelectorAll(".menu-items").forEach(item => {
         const id = Number(item.dataset.id);
 
+// tillägg till karten med o klicka, visa att den är klickat, uppdatera kart badgen
         item.addEventListener("click", () => {
             toggleCartItem(id);
             updateMenuSelection();
@@ -74,7 +77,7 @@ function addMenuClickEvents() {
     });
 }
 
-
+// om vara klickas(highlight), om inte icke highlight, 
 function updateMenuSelection() {
     const cartItems = getCartItems();
 
@@ -84,14 +87,24 @@ function updateMenuSelection() {
     });
 }
 
-
+// uppdaterar kart badgen, visar bara om nånting har varit valt
 function updateCartCount(count) {
     const badge = document.getElementById("kund-count");
     badge.textContent = count;
-    badge.style.display = count > 0 ? "inline-block" : "none";  
+    badge.style.display = count > 0 ? "inline-block" : "none";
 }
 
+// används av ny beställning kannparna
+function resetOrder() {
+    clearCart();
+    updateCartCount(0);
 
+    document
+        .querySelectorAll(".menu-items.selected")
+        .forEach(el => el.classList.remove("selected"));
+
+    showView("menyVy");
+}
 
 
 export function getMenuItems() {
@@ -99,29 +112,25 @@ export function getMenuItems() {
 }
 
 
-
-
-
 document.getElementById("kundvagnKnapp")
-        .addEventListener("click", () => {
-            showView("cartVy");
-            renderCartView();
-});
-
-document.getElementById("newOrderBtn")
-    .addEventListener("click", () => {
-
-        clearCart();
-        updateCartCount(0);
-
-        document
-            .querySelectorAll(".menu-items.selected")
-            .forEach(el => el.classList.remove("selected"));
-
-        showView("menyVy");
+    ?.addEventListener("click", () => {
+        showView("cartVy");
+        renderCartView();
     });
-    
+
 document.querySelector(".checkout-btn")
-    .addEventListener("click", () => {
+    ?.addEventListener("click", () => {
         showView("orderVy");
     });
+
+document.getElementById("newOrderBtn")
+    ?.addEventListener("click", resetOrder);
+
+document.querySelector(".secondary-btn")
+    ?.addEventListener("click", () => {
+        showView("receiptVy");
+        renderReceiptView();
+    });
+
+document.getElementById("receiptNewOrder")
+    ?.addEventListener("click", resetOrder);

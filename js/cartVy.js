@@ -1,17 +1,20 @@
-import { 
-    getCartItems, 
-    addToCart, 
-    removeFromCart 
-} from "./cartFunctions.js";
+import { getCartItems, addToCart, removeFromCart } 
+    from "./cartFunctions.js";
 
 import { getMenuItems } from "./main.js";
+
+// rendercartview kallas varje gång cartVyn är i gång, re-reders carten från början
 export function renderCartView() {
+
     const container = document.querySelector(".cart-items");
     container.innerHTML = "";
 
+// kallar efter current data, menun från apin
     const cartItems = getCartItems();
     const menuItems = getMenuItems();
 
+
+// gruppera varer efter ID, skapa ID, öka qty
     const grouped = {};
 
     cartItems.forEach(id => {
@@ -23,11 +26,13 @@ export function renderCartView() {
         }
     });
 
+// räkna priset, item price * mängd
     let total = 0;
 
     Object.values(grouped).forEach(({ item, qty }) => {
         total += item.price * qty;
 
+// skapa en rad med nafmn, pris, mängd, plus minus knapp
         const row = document.createElement("div");
         row.classList.add("cart-row");
 
@@ -43,11 +48,13 @@ export function renderCartView() {
             </div>
         `;
 
+// tillägg en sak, re-render
         row.querySelector(".plus").addEventListener("click", () => {
             addToCart(item.id);
             renderCartView();
         });
 
+// ta bort en sak, re-render
         row.querySelector(".minus").addEventListener("click", () => {
             removeFromCart(item.id);
             renderCartView();

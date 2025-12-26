@@ -1,38 +1,38 @@
 
-body { 
+            body { 
      background-color: rgb(27, 116, 71);
      color: rgb(235, 219, 219);
      font-family: sans-serif;}
 
-.app-container {
+            .app-container {
     max-width: 350px;
     margin: 0 auto;}
 
-.vy {
+            .vy {
     display: flex;
     flex-direction: column;}
 
-.hidden {
+            .hidden {
     display: none;}
 
-.kundvagn-header {
+            .kundvagn-header {
     display: flex;
     justify-content: flex-end;
     padding: 1em;}
 
-.kundvagn-container {
+            .kundvagn-container {
     position: relative;
     display: inline-block;}
 
-.kundvagn {
+            .kundvagn {
     width: 40px;
     height: 40px;
     border-radius: 0.5em;}
 
-.kundvagn:hover, .menu-items:hover {
+            .kundvagn:hover, .menu-items:hover {
     cursor: pointer;}
 
-.kund-badge {
+            .kund-badge {
     position: absolute;
     top: -5px;
     right: -5px;
@@ -43,10 +43,10 @@ body {
     border-radius: 50%;
     display: none;}
 
-.menu-section {
+            .menu-section {
     margin-bottom: 1.5em;}
 
-.menu-items {
+            .menu-items {
     background-color: rgb(104, 100, 100);
     border: 0.1em solid rgb(160, 152, 152);
     padding: 0.5em;
@@ -54,87 +54,103 @@ body {
     color: white;}
 
 
-.menu-items.selected {
+            .menu-items.selected {
     background-color: rgb(50, 50, 50);}
 
-.kategori-titel {
+            .kategori-titel {
     margin-top: 1em;
     margin-bottom: 0.3em;}
 
-.dip-container, .drink-container {
+            .dip-container, .drink-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 0.1rem;}
 
 
-    .cart-row {
+            .cart-row {
     padding: 0.8em 0;
-    border-bottom: 1px dotted #999;
-}
+    border-bottom: 1px dotted #999;}
 
-.cart-row-top {
+            .cart-row-top {
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: space-between;}
 
-.cart-row-bottom {
+            .cart-row-bottom {
     font-size: 0.8em;
-    opacity: 0.8;
-}
+    opacity: 0.8;}
 
-.cart-total {
+            .cart-total {
     margin-top: 1em;
     padding: 1em;
     background: #d3b4b4;
     color: #000;
     display: flex;
-    justify-content: space-between;
-}
+    justify-content: space-between;}
 
-.checkout-btn {
+            .checkout-btn {
     width: 100%;
     padding: 1em;
     margin-top: 1em;
-    font-weight: bold;
-}
+    font-weight: bold;}
 
 
-.order-content {
+            .order-content {
     text-align: center;
-    padding: 2em 1em;
-}
+    padding: 2em 1em;}
 
-.order-image {
+            .order-image {
     width: 180px;
-    margin-bottom: 1.5em;
-}
+    margin-bottom: 1.5em;}
 
-.order-time {
+            .order-time {
     margin-top: 1em;
     opacity: 0.8;
-    width: 100%;
-}
+    width: 100%;}
 
-.order-id {
+            .order-id {
     margin-bottom: 2em;
     font-size: 0.9em;
-    opacity: 0.7;
-}
+    opacity: 0.7;}
 
-.secondary-btn {
+            .secondary-btn {
     width: 100%;
     padding: 1em;
     margin-bottom: 1em;
     background: transparent;
     color: white;
-    border: 1px solid white;
-}
+    border: 1px solid white;}
 
-.primary-btn {
+            .primary-btn {
     width: 100%;
     padding: 1em;
     background: #2b2b2b;
     color: white;
     border: none;
-    font-weight: bold;
-}
+    font-weight: bold;}
+
+            .receipt {
+    background: #eee;
+    color: #000;
+    padding: 1.5em;
+    border-radius: 0.5em;}
+
+            .receipt-logo {
+    display: block;
+    margin: 0 auto 1em;
+    width: 60px;}
+
+            .receipt-items {
+    margin: 1em 0;}
+
+            .receipt-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dotted #999;
+    padding: 0.5em 0;}
+
+            .receipt-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1em;
+    margin-bottom: 1.5em;
+    font-weight: bold;}

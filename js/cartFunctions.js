@@ -1,3 +1,9 @@
+// vad är i karten, 
+// lägg till en item,
+// ta bort ett item
+// välj eller un-välj item
+// börja om
+
 let cartItems = [];
 
 export function getCartItems() {
