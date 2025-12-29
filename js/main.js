@@ -94,10 +94,24 @@ function updateCartCount(count) {
     badge.style.display = count > 0 ? "inline-block" : "none";
 }
 
+function hideCartBadge() {
+    const badge = document.getElementById("kund-count");
+    badge.style.display = "none";
+}
+
+function showCartBadgeIfNeeded() {
+    const badge = document.getElementById("kund-count");
+    const count = getCartItems().length;
+
+    badge.textContent = count;
+    badge.style.display = count > 0 ? "inline-block" : "none";
+}
+
 // används av ny beställning kannparna
 function resetOrder() {
     clearCart();
     updateCartCount(0);
+    showCartBadgeIfNeeded();
 
     document
         .querySelectorAll(".menu-items.selected")
@@ -113,24 +127,39 @@ export function getMenuItems() {
 
 
 document.getElementById("kundvagnKnapp")
-    ?.addEventListener("click", () => {
-        showView("cartVy");
-        renderCartView();
-    });
+  ?.addEventListener("click", () => {
+      showView("cartVy");
+      hideCartBadge();
+      renderCartView();
+  });
 
 document.querySelector(".checkout-btn")
-    ?.addEventListener("click", () => {
-        showView("orderVy");
-    });
+  ?.addEventListener("click", () => {
+      const msg = document.getElementById("empty-cart-msg");
+
+      if (getCartItems().length === 0) {
+          msg.classList.remove("hidden");
+          return;
+      }
+
+      msg.classList.add("hidden");
+      showView("orderVy");
+  });
 
 document.getElementById("newOrderBtn")
     ?.addEventListener("click", resetOrder);
 
-document.querySelector(".secondary-btn")
-    ?.addEventListener("click", () => {
-        showView("receiptVy");
-        renderReceiptView();
-    });
+document.getElementById("receiptBtn")
+  ?.addEventListener("click", () => {
+      showView("receiptVy");
+      renderReceiptView();
+  });
 
 document.getElementById("receiptNewOrder")
     ?.addEventListener("click", resetOrder);
+
+ document.getElementById("backToMenuBtn")
+    ?.addEventListener("click", () => {
+      showView("menyVy");
+      showCartBadgeIfNeeded();
+  });

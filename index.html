@@ -37,6 +37,10 @@
 
 <section id="cartVy" class="vy hidden">
 
+    <p id="empty-cart-msg" class="hidden">
+        Du har inte valt något
+    </p>
+
     <div class="cart-items"></div>
 
     <div class="cart-total">
@@ -44,7 +48,13 @@
         <strong><span id="cart-total-price">0</span> SEK</strong>
     </div>
 
-    <button class="checkout-btn">TAKE MY MONEY!</button>
+    <button class="checkout-btn">
+        TAKE MY MONEY!
+    </button>
+
+        <button id="backToMenuBtn" class="secondary-btn">
+             ← Tillbaka till meny
+        </button>
 
 </section>
 
@@ -59,7 +69,7 @@
         <p class="order-time">ETA 5 MIN</p>
         <p class="order-id">#4KJWSDf2</p>
 
-        <button class="secondary-btn">SE KVITTO</button>
+        <button id="receiptBtn" class="secondary-btn">SE KVITTO</button>
         <button id="newOrderBtn" class="primary-btn">GÖR EN NY BESTÄLLNING</button>
     </div>
 

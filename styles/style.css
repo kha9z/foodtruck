@@ -50,7 +50,7 @@
     background-color: rgb(104, 100, 100);
     border: 0.1em solid rgb(160, 152, 152);
     padding: 0.5em;
-    border-radius: 0.3em;
+    border-radius: 0em;
     color: white;}
 
 
@@ -116,6 +116,7 @@
     width: 100%;
     padding: 1em;
     margin-bottom: 1em;
+    margin-top: 1em;
     background: transparent;
     color: white;
     border: 1px solid white;}
@@ -154,3 +155,8 @@
     margin-top: 1em;
     margin-bottom: 1.5em;
     font-weight: bold;}
+
+           #empty-cart-msg {
+    color: red;
+    text-align: center;
+    margin-top: 1em;}
